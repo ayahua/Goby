@@ -1,0 +1,65 @@
+.topNav{
+    background-color:#001529;
+    color:#fff;
+    display:flex;
+    height:60px;
+    align-items: center;
+    z-index: 1;
+    box-shadow: 0px 0px 5px 0px #333;
+    position: fixed;
+    right: 0;
+    left: 0;
+    .logo{
+      width:180px;
+      text-align:center;
+      font-size:18px;
+    }
+    .topMenus{
+      flex:1;
+      display:flex;
+      list-style:none;
+      margin:0;
+      padding:0;
+      >li{
+        margin-right:40px;
+        cursor: pointer;
+        height: 60px;
+        width:80px;
+        padding: 0 10px;
+        opacity: 0.8;
+        transition:all .2s ease;
+        transform: scale(0.9);
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &:hover{
+          opacity: 1;
+          transform: scale(1);
+        }
+        &.active{
+          opacity:1;
+          transform: scale(1);
+          background-color:#641529;
+        }
+        .jl-icon{
+          margin-bottom:5px;
+          font-size:25px;
+        }
+      }
+    }
+    .userMenuButton{
+      width:120px;
+      text-align:center;
+      img{
+        width: 38px;
+        border: 3px solid;
+        height: 38px;
+        border-radius: 20px;
+        margin-left: 10px;
+      }
+    }
+}
+.userMenuDrop{
+    top:60px !important;
+}

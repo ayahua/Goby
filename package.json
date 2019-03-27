@@ -1,0 +1,68 @@
+{
+  "name": "Goby",
+  "version": "1.0.0",
+  "description": "Goby",
+  "main": "index.js",
+  "author": "huasen",
+  "license": "ISC",
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "http://gitlab.elephtribe.net/lib/Goby.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "node server.js",
+    "build": "next build",
+    "export": "npm run build && next export",
+    "start": "npm run build && NODE_ENV=production node server.js",
+    "lint": "npm run lint:js",
+    "lint:eslint": "eslint . --cache --ignore-pattern .gitignore",
+    "lint:eslint:fix": "eslint --ignore-pattern .gitignore --fix",
+    "lint:js": "npm run lint:eslint:fix -- . ",
+    "lint:staged": "lint-staged",
+    "prettify": "prettier --write",
+    "precommit-msg": "echo 'Pre-commit checks...' && exit 0"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run lint:eslint:fix -- .",
+      "git add --force"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add --force"
+    ]
+  },
+  "pre-commit": [
+    "precommit-msg",
+    "lint:staged"
+  ],
+  "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "antd": "^3.12.3",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-import": "^1.11.0",
+    "express": "^4.16.4",
+    "less": "^3.9.0",
+    "lru-cache": "^5.1.1",
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.12.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "^3.5.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "eslint-plugin-redux-saga": "^0.10.0",
+    "lint-staged": "^8.1.0",
+    "pre-commit": "^1.2.2",
+    "prettier": "^1.15.3"
+  }
+}
